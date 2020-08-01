@@ -18,9 +18,9 @@ Implementation Process
 
 
 Program Dependencies
-1. DateTime Module – This module generates the system date and time of the user’s PC so the time spent on the project can be tracked.
-2. Time Module – This module tracks and generates the total time spent on the task.
-3. CSV Module – This module takes the various inputs made by the user to create the CSV file.
+1. DateTime Module – This module generates the system date and time of the user’s PC so the time spent on the project can be tracked. This module made it possible for the date to be automatically generated when the user is ready to undergo the task. This prevents the user from entering the needed time and date.
+2. Time Module – This module tracks and generates the total time spent on the task. This allows for the breaking down of the time to minutes and hours separately so that they can be subtracted individually to find the total time used in hours so that the amount of money to be paid can be calculated.
+3. CSV Module – This module takes the various inputs made by the user to create the CSV file. It takes the inputs from the user and automatically generates a csv file that can be used as record.
 
 
 Design Process
