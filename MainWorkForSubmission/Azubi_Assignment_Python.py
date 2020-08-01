@@ -56,7 +56,7 @@ def time_task_lasted_calculator():
     global time_task_started, time_task_completed, time_hour_completed, time_task_completed
     global time_minute_completed, time_minute_started, time_hour_started, money_to_be_paid, date_task_completed
     now_done = datetime.datetime.now()
-    time_task_completed = now_done.strftime('%I:%M')
+    time_task_completed = now_done.strftime('%H:%M')
     tell_time()
     total_hours_for_task = abs(time_hour_completed - time_hour_started)
     total_minutes_for_task = abs(time_minute_completed - time_minute_started)
@@ -71,8 +71,8 @@ def tell_time():
     #It also gives the hours and minutes separately
     global current_time, time_n
     time_n = time.gmtime()
-    current_time = time.strftime("%I:%M %p", time_n)  # %I= prints the hour, %M= gives the minutes, %P= prints AM or PM
-    time_hour = int(time.strftime("%I", time_n))
+    current_time = time.strftime("%H:%M %p", time_n)  # %I= prints the hour, %M= gives the minutes, %P= prints AM or PM
+    time_hour = int(time.strftime("%H", time_n))
     time_minute = int(time.strftime("%M", time_n))
 
 def breakTask():
@@ -98,7 +98,7 @@ def breakFunction():
     while response.capitalize().strip() == "Break":
         break_date = now_break.strftime('%Y-%m-%d')
         break_time = current_time
-        time_hour_break = int(time.strftime("%I", time_n))
+        time_hour_break = int(time.strftime("%H", time_n))
         time_minute_break = int(time.strftime("%M", time_n))
         print(f"You are going on a break from your ongoing task on {break_date} at {break_time}")
         hour_used_before_break = abs(time_hour_break - time_hour_started)
@@ -130,7 +130,7 @@ def responseYes():
     now_continue = datetime.datetime.now()
     date_task_continue = now_continue.strftime('%Y-%m-%d')
     time_task_continue = current_time
-    time_hour_continue = int(time.strftime("%I", time_n))
+    time_hour_continue = int(time.strftime("%H", time_n))
     time_minute_continue = int(time.strftime("%M", time_n))
     print(f"You are continuing at {date_task_continue} on {time_task_continue}")
     print("Type Done if you are Done with the task completely or Break if you want to go on a break.")
@@ -146,7 +146,7 @@ def whenDone():
         now_done_break = datetime.datetime.now()
         date_task_completed = now_done_break.strftime('%Y-%m-%d')
         time_task_completed = current_time
-        time_hour_done = int(time.strftime("%I", time_n))
+        time_hour_done = int(time.strftime("%H", time_n))
         time_minute_done = int(time.strftime("%M", time_n))
         print(f"You completed the task {task} on {date_task_completed} at {time_task_completed}")
         hour_used_after_break = abs(time_hour_done - time_hour_continue)
@@ -184,7 +184,7 @@ def responseYes_1():
     date_task_started = now_start.strftime('%Y-%m-%d')
     tell_time()
     time_task_started = current_time
-    time_hour_started = int(time.strftime("%I", time_n))
+    time_hour_started = int(time.strftime("%H", time_n))
     time_minute_started = int(time.strftime("%M", time_n))
     print(f"You are beginning this task on {date_task_started} at {current_time}")
     completed_Task()
@@ -203,7 +203,7 @@ def noResponse():
         date_task_started = now_start.strftime('%Y-%m-%d')
         tell_time()
         time_task_started = current_time
-        time_hour_started = int(time.strftime("%I", time_n))
+        time_hour_started = int(time.strftime("%H", time_n))
         time_minute_started = int(time.strftime("%M", time_n))
         print(f"You are beginning your task named {task} on {date_task_started} at {current_time}")
         completed_Task()
@@ -233,7 +233,7 @@ def done():
     tell_time()
     time_task_completed = current_time
     global time_hour_completed, time_minute_completed
-    time_hour_completed = int(time.strftime("%I", time_n))
+    time_hour_completed = int(time.strftime("%H", time_n))
     time_minute_completed = int(time.strftime("%M", time_n))
     print(f"You completed the task on {date_task_completed} at {current_time}")
     time_task_lasted_calculator()
